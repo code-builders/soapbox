@@ -11,9 +11,10 @@ while a < 1
 end
 
 body = ""
+bubbles = []
 
 while body.downcase != "exit"
-  puts "What would you like to Bubble?"
+  puts "What would you like to Bubble? (Type \"exit\" to end program)"
   body = gets.chomp
 
   if body.downcase != "exit"
@@ -21,10 +22,10 @@ while body.downcase != "exit"
     body1 = SoapBox.new(body: body)
 
     body2 = body1.body + " " + t.created_at.to_s
-    bubbles = []
     bubbles.push(body2)
-
-    puts user.username.capitalize
-    puts bubbles
   end
+
+puts user.username.capitalize
+puts bubbles
+
 end
