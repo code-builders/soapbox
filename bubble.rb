@@ -7,6 +7,6 @@ class SoapBox
   def initialize(attrs={})
     @username     = attrs[:username]
     @body         = attrs[:body]
-    @created_at   = attrs[:created_at]
+    @created_at   = Time.now
   end
 end
