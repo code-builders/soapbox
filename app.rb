@@ -19,10 +19,10 @@ while body.downcase != "exit"
 
   if body.downcase != "exit"
     t = SoapBox.new(created_at: Time.now)
-    body1 = SoapBox.new(body: body)
-
-    body2 = body1.body + " " + t.created_at.to_s
+    body1 = SoapBox.new(username: username, body: body)
+    body2 = body1.body + " \n" + t.created_at.strftime("%A, %d %b %Y %l:%M %p").to_s
     bubbles.push(body2)
+    puts body1.write_file
   end
 
 puts user.username.capitalize

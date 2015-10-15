@@ -7,6 +7,12 @@ class SoapBox
   def initialize(attrs={})
     @username     = attrs[:username]
     @body         = attrs[:body]
-    @created_at   = Time.now
+    @created_at   = attrs[:created_at]
+  end
+
+  def write_file
+    File.open("/Users/Chris/Code/class_projects/soapbox/trees/#{@body}.txt", 'w') do |file|
+      file << "#{@username.capitalize}" 
+    end
   end
 end
